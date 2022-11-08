@@ -8,7 +8,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(254, 254, 255, 0.966);
+  background: rgba(13, 13, 173, 0.966);
   z-index: 99999;
   opacity: 0;
   -webkit-transition: opacity 400ms ease-in;
@@ -60,7 +60,7 @@ body {
 
 .close {
   background: #bd0f02;
-  color: #FFFFFF;
+  color: #888383;
   line-height: 25px;
   position: absolute;
   right: 1px;
