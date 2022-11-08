@@ -1,21 +1,46 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import './modal.css';
-interface ModalType {
-  children?: ReactNode;
-  isOpen: boolean;
-  toggle: () => void;
+interface ModalProps {
+  /**
+   * estilo de la letra en el modal
+   */
+  color?: string;
+  /**
+   *  color de la letra
+   */
+  backgroundColor?: string;
+  /**
+   * Color de Fondo del modal.
+   */
+  titulo: string;
+  animacion?: 'Aparecer';
 }
 
-export default function Modal(props: ModalType) {
+/**
+ * Primary UI component for user interaction
+ */
+export const Modal = ({
+  backgroundColor = '#fff',
+  titulo = 'Ejemplo Modal',
+  animacion = 'Aparecer',
+  color = '#000',
+  ...props
+}: ModalProps) => {
+  const pres = animacion=='Aparecer'? 'movedown' : 'rotate';
+
   return (
     <>
-      {props.isOpen && (
-        <div className="modal-overlay" onClick={props.toggle}>
-          <div onClick={(e) => e.stopPropagation()} className="modal-box">
-            {props.children}
-          </div>
-        </div>
-      )}
+    <ul>
+			<li><a href="#modal">Proyecto Final React Modal</a></li>
+		</ul>
+    <div id="modal" className="modalmask">
+      <div className={[`modalbox ${pres}`].join(' ')} style={{ backgroundColor, color}}>
+		    <a href="#close" title="Close" className="close">X</a>
+		    <h2>{titulo}</h2>
+        <h5>Tipo de Animación: {animacion}</h5>
+	      <p>Fernando Quispe Lefonzo CI: 7057993 LP</p>
+		  </div>
+    </div>
     </>
   );
-}
+};

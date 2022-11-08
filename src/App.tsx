@@ -1,16 +1,34 @@
-import Modal from  './components/modal';
-import useModal from './usemodal';
+import logo from './logo.svg';
+import './App.css';
 
-export default function App() {
-  const { isOpen, toggle } = useModal();
+interface User {
+  name: string,
+  age: number,
+  email: boolean | string
+}
+
+const App = (): JSX.Element => {
+
+
   return (
     <div className="App">
-      <h1>Ejemplo Con Modal</h1>
-      <button onClick={toggle}>Haga Click para Abrir el Modal </button>
-      <Modal isOpen={isOpen} toggle={toggle}>
-      <div>Proyecto Final React Modulo 7 Fernando Quispe Lefonzo 7057993 LP</div>
-      </Modal>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
 
+export default App;

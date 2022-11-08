@@ -1,20 +1,105 @@
-.modal-overlay {
-  z-index: 9999;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
+body {
+  font-family: Arial, sans-serif;
+}
+.modalmask {
+  position: fixed;
+  font-family: Arial, sans-serif;
   top: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(254, 254, 255, 0.966);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
 }
 
-.modal-box {
-  display: block;
-  background: white;
-  width: 70%;
-  height: 70%;
-  padding: 1rem;
-  border-radius: 1rem;
+.modalmask:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalbox {
+  width: 400px;
+  position: relative;
+  padding: 5px 20px 13px 20px;
+  border-radius: 3px;
+  -webkit-transition: all 500ms ease-in;
+  -moz-transition: all 500ms ease-in;
+  transition: all 500ms ease-in;
+
+}
+
+.movedown {
+  margin: 0 auto;
+}
+
+.resize {
+  margin: 10% auto;
+  width: 0;
+  height: 0;
+
+}
+
+.modalmask:target .movedown {
+  margin: 10% auto;
+}
+
+.modalmask:target .rotate {
+  transform: rotate(360deg) scale(1, 1);
+  -webkit-transform: rotate(360deg) scale(1, 1);
+}
+
+.modalmask:target .resize {
+  width: 400px;
+  height: 200px;
+}
+
+.close {
+  background: #bd0f02;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: 1px;
+  text-align: center;
+  top: 1px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.close:hover {
+  background: #61370b;
+  color: rgb(54, 1, 122);
+}
+
+ul {
+  width: 500px;
+  margin: 5% auto;
+  list-style: none;
+}
+
+ul li a {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  background: rgb(218, 10, 10);
+  padding: 20px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 3px;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+ul li a:hover {
+  background: #424140;
+  color: rgb(146, 0, 0);
+
 }
