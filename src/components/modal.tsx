@@ -26,7 +26,7 @@ export const Modal = ({
   color = '#000',
   ...props
 }: ModalProps) => {
-  const pres = animacion=='Aparecer'? 'movedown' : 'rotate';
+  const pres = animacion ==='Aparecer'? 'movedown' : 'rotate';
 
   return (
     <>
